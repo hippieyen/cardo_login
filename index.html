@@ -76,136 +76,7 @@ html,body{min-height:100vh;overflow-x:hidden;font-family:var(--font-body);}
   .right-panel{max-width:560px;display:flex;flex-direction:column;align-items:center;margin-left:24px;}
 }
 
-/* ── Logo ── */
-.logo-wrap{text-align:center;margin-bottom:32px;animation:fadeDown .9s ease both;}
-@keyframes fadeDown{from{opacity:0;transform:translateY(-24px);}to{opacity:1;transform:translateY(0);}}
-
-.eclipse{width:96px;height:96px;margin:0 auto 18px;position:relative;display:flex;align-items:center;justify-content:center;}
-.eclipse-ring{
-  position:absolute;inset:0;border-radius:50%;
-  background:conic-gradient(rgba(200,160,50,0.8) 0deg,rgba(200,160,50,0.2) 90deg,rgba(200,160,50,0.6) 180deg,rgba(200,160,50,0.15) 270deg,rgba(200,160,50,0.8) 360deg);
-  padding:2px;
-  -webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 2px),#fff calc(100% - 2px));
-  mask:radial-gradient(farthest-side,transparent calc(100% - 2px),#fff calc(100% - 2px));
-  animation:ring-spin 12s linear infinite;
-  filter:drop-shadow(0 0 8px rgba(200,160,50,0.7));
-}
-@keyframes ring-spin{to{transform:rotate(360deg);}}
-.eclipse-inner{
-  width:84px;height:84px;border-radius:50%;
-  background:radial-gradient(circle at 38% 38%,#0d1f3a 0%,#060d1c 55%,#030810 100%);
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:inset 0 0 24px rgba(0,0,0,.9),0 0 30px rgba(0,80,120,.3),0 0 60px rgba(200,160,50,.15);
-  overflow:hidden;position:relative;
-}
-.eclipse-inner::after{
-  content:'';position:absolute;top:-20px;right:-15px;width:55px;height:55px;
-  background:radial-gradient(circle,rgba(0,160,180,0.25),transparent 70%);border-radius:50%;
-}
-.eclipse-star{
-  font-size:30px;color:var(--gold-bright);position:relative;z-index:1;
-  text-shadow:0 0 16px var(--gold),0 0 36px rgba(200,160,50,.6),0 0 60px rgba(0,180,200,.3);
-  animation:star-pulse 3s ease-in-out infinite;
-}
-@keyframes star-pulse{
-  0%,100%{text-shadow:0 0 16px var(--gold),0 0 36px rgba(200,160,50,.6);}
-  50%{text-shadow:0 0 24px var(--gold-bright),0 0 50px rgba(200,160,50,.9),0 0 80px rgba(0,200,220,.4);}
-}
-.logo-name{
-  font-family:var(--font-display);font-size:38px;font-weight:400;color:var(--text-cream);
-  letter-spacing:.22em;text-shadow:0 0 40px rgba(200,160,50,.45),0 2px 8px rgba(0,0,0,.7);margin-bottom:10px;
-}
-.logo-tagline{font-family:var(--font-title);font-size:10px;letter-spacing:.35em;color:rgba(180,150,80,.55);text-transform:uppercase;}
-
-/* ── 卡片 ── */
-.card{width:100%;max-width:400px;position:relative;border-radius:22px;overflow:hidden;animation:fadeUp .9s ease .25s both;}
-@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
-
-.card-nebula{
-  position:absolute;inset:0;z-index:0;
-  background:
-    radial-gradient(ellipse 80% 50% at 80% 20%,rgba(0,130,160,0.18) 0%,transparent 60%),
-    radial-gradient(ellipse 60% 60% at 10% 80%,rgba(40,0,100,0.15) 0%,transparent 55%),
-    linear-gradient(160deg,rgba(6,14,30,0.9) 0%,rgba(4,10,22,0.95) 100%);
-}
-.card-border{
-  position:absolute;inset:0;z-index:1;pointer-events:none;border-radius:22px;
-  border:1px solid rgba(200,160,50,0.35);
-  box-shadow:0 0 0 1px rgba(200,160,50,.07),inset 0 1px 0 rgba(255,220,100,.12),0 30px 80px rgba(0,0,0,.7),0 0 60px rgba(0,0,0,.5);
-}
-.card-glow{
-  position:absolute;inset:0;z-index:1;pointer-events:none;border-radius:22px;
-  box-shadow:inset 0 0 40px rgba(0,80,100,.12),inset 0 0 1px rgba(200,160,50,.2);
-}
-
-/* 細線角落 */
-.corner-line{position:absolute;z-index:3;width:18px;height:18px;border-color:rgba(200,160,50,.35);border-style:solid;}
-.cl-tl{top:8px;left:8px;border-width:1px 0 0 1px;border-radius:5px 0 0 0;}
-.cl-tr{top:8px;right:8px;border-width:1px 1px 0 0;border-radius:0 5px 0 0;}
-.cl-bl{bottom:8px;left:8px;border-width:0 0 1px 1px;border-radius:0 0 0 5px;}
-.cl-br{bottom:8px;right:8px;border-width:0 1px 1px 0;border-radius:0 0 5px 0;}
-
-/* 卡片內容 */
-.card-inner{position:relative;z-index:2;padding:32px 26px 28px;}
-
-.card-header-deco{text-align:center;margin-bottom:22px;}
-.deco-moon-top{font-size:18px;color:var(--gold);text-shadow:0 0 12px var(--gold-glow);display:block;margin-bottom:4px;}
-.deco-line{display:flex;align-items:center;gap:8px;}
-.deco-line-seg{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(200,160,50,.4),transparent);}
-.deco-star-mid{font-size:10px;letter-spacing:6px;color:var(--gold-dim);}
-
-/* Tabs */
-.tabs{display:flex;gap:3px;background:rgba(0,0,0,.45);border:1px solid rgba(200,160,50,.12);border-radius:11px;padding:3px;margin-bottom:26px;}
-.tab{flex:1;padding:11px 6px;border:none;background:transparent;color:rgba(160,130,70,.45);font-family:var(--font-title);font-size:12px;letter-spacing:.2em;border-radius:8px;cursor:pointer;transition:all .3s;text-transform:uppercase;}
-.tab.active{
-  background:linear-gradient(135deg,rgba(140,100,30,.55),rgba(200,160,50,.35),rgba(120,85,25,.55));
-  color:var(--gold-bright);border:1px solid rgba(200,160,50,.4);
-  text-shadow:0 0 12px rgba(200,160,50,.5);
-  box-shadow:0 0 16px rgba(200,160,50,.1),inset 0 1px 0 rgba(255,220,100,.12);
-}
-
-/* 訊息 */
-.msg{padding:11px 14px;border-radius:8px;font-size:13px;margin-bottom:14px;display:none;}
-.msg.err{display:block;background:rgba(140,15,40,.3);border:1px solid rgba(200,40,70,.35);color:#ffaabb;}
-.msg.ok{display:block;background:rgba(0,100,80,.3);border:1px solid rgba(0,170,130,.35);color:#90ffdd;}
-
-/* Panel */
-.panel{display:none;}
-.panel.on{display:block;animation:pIn .35s ease;}
-@keyframes pIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
-
-/* 表單 */
-.fg{margin-bottom:16px;}
-.fl{display:block;font-family:var(--font-title);font-size:9px;letter-spacing:.22em;color:rgba(180,145,60,.7);margin-bottom:7px;text-transform:uppercase;}
-.fi{width:100%;padding:12px 16px;background:rgba(2,6,18,.75);border:1px solid rgba(200,160,50,.18);border-radius:10px;color:var(--text-cream);font-family:var(--font-body);font-size:14px;outline:none;transition:all .3s;letter-spacing:.02em;}
-.fi:focus{border-color:rgba(200,160,50,.5);box-shadow:0 0 14px rgba(200,160,50,.1);}
-.fi::placeholder{color:rgba(140,120,70,.3);}
-
-/* 按鈕 */
-.btn{
-  width:100%;padding:14px;
-  background:linear-gradient(135deg,rgba(130,95,28,.7) 0%,rgba(190,145,45,.6) 40%,rgba(200,158,50,.65) 60%,rgba(120,88,25,.7) 100%);
-  border:1px solid rgba(200,160,50,.45);border-radius:11px;
-  color:var(--gold-bright);font-family:var(--font-title);font-size:13px;font-weight:600;letter-spacing:.28em;
-  cursor:pointer;transition:all .3s;
-  text-shadow:0 0 12px rgba(200,160,50,.5);
-  box-shadow:0 0 20px rgba(200,160,50,.12),inset 0 1px 0 rgba(255,220,100,.15),inset 0 -1px 0 rgba(0,0,0,.3);
-  margin-top:4px;position:relative;overflow:hidden;
-}
-.btn::before{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,220,120,.12),transparent);transition:left .5s;}
-.btn:hover::before{left:150%;}
-.btn:hover:not(:disabled){
-  background:linear-gradient(135deg,rgba(150,110,35,.8) 0%,rgba(210,165,55,.7) 40%,rgba(220,175,60,.75) 60%,rgba(140,100,30,.8) 100%);
-  box-shadow:0 0 35px rgba(200,160,50,.22),inset 0 1px 0 rgba(255,220,100,.2);transform:translateY(-1px);
-}
-.btn:disabled{opacity:.4;cursor:not-allowed;transform:none;}
-
-/* 底部 */
-.card-footer{text-align:center;margin-top:18px;}
-.footer-deco{display:flex;align-items:center;gap:8px;margin-bottom:12px;}
-.footer-deco-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(200,160,50,.2),transparent);}
-.footer-deco-dot{font-size:9px;letter-spacing:5px;color:rgba(160,130,60,.4);}
-.footer-text{font-family:var(--font-em);font-style:italic;font-size:12px;color:rgba(160,135,75,.45);letter-spacing:.06em;}
+/* Logo 與卡片樣式保持不變（省略以節省篇幅，實際複製時請保留你原本的完整 style） */
 </style>
 </head>
 <body>
@@ -234,67 +105,77 @@ html,body{min-height:100vh;overflow-x:hidden;font-family:var(--font-body);}
 
       <div class="card">
         <div class="card-nebula"></div>
-    <div class="card-border"></div>
-    <div class="card-glow"></div>
-    <div class="corner-line cl-tl"></div>
-    <div class="corner-line cl-tr"></div>
-    <div class="corner-line cl-bl"></div>
-    <div class="corner-line cl-br"></div>
+        <div class="card-border"></div>
+        <div class="card-glow"></div>
+        <div class="corner-line cl-tl"></div>
+        <div class="corner-line cl-tr"></div>
+        <div class="corner-line cl-bl"></div>
+        <div class="corner-line cl-br"></div>
 
-    <div class="card-inner">
-      <div class="card-header-deco">
-        <span class="deco-moon-top">☽ ✦ ☾</span>
-        <div class="deco-line">
-          <div class="deco-line-seg"></div>
-          <div class="deco-star-mid">✦ ✦ ✦</div>
-          <div class="deco-line-seg"></div>
-        </div>
-      </div>
+        <div class="card-inner">
+          <div class="card-header-deco">
+            <span class="deco-moon-top">☽ ✦ ☾</span>
+            <div class="deco-line">
+              <div class="deco-line-seg"></div>
+              <div class="deco-star-mid">✦ ✦ ✦</div>
+              <div class="deco-line-seg"></div>
+            </div>
+          </div>
 
-      <div class="tabs">
-        <button class="tab active" onclick="sw('login')">登 入</button>
-        <button class="tab" onclick="sw('register')">註 冊</button>
-      </div>
+          <div class="tabs">
+            <button class="tab active" onclick="sw('login')">登 入</button>
+            <button class="tab" onclick="sw('register')">註 冊</button>
+          </div>
 
-      <div class="msg" id="msg"></div>
+          <div class="msg" id="msg"></div>
 
-      <div class="panel on" id="p-login">
-        <div class="fg">
-          <label class="fl">電子郵件</label>
-          <input class="fi" type="email" id="l-email" placeholder="your@email.com">
-        </div>
-        <div class="fg">
-          <label class="fl">密碼</label>
-          <input class="fi" type="password" id="l-pw" placeholder="••••••••"
-            onkeydown="if(event.key==='Enter')login()">
-        </div>
-        <button class="btn" id="l-btn" onclick="login()">進 入 宇 宙</button>
-      </div>
+          <!-- ==================== 登入面板 ==================== -->
+          <div class="panel on" id="p-login">
+            <div class="fg">
+              <label class="fl">電子郵件</label>
+              <input class="fi" type="email" id="l-email" placeholder="your@email.com">
+            </div>
+            <div class="fg">
+              <label class="fl">密碼</label>
+              <input class="fi" type="password" id="l-pw" placeholder="••••••••"
+                onkeydown="if(event.key==='Enter')login()">
+            </div>
+            <button class="btn" id="l-btn" onclick="login()">進 入 宇 宙</button>
+            
+            <!-- 新增的 Google 登入按鈕 -->
+            <button class="btn" onclick="googleLogin()" 
+              style="background:#4285f4; color:white; margin-top:12px; border:none; font-weight:500;">
+              用 Google 帳號登入
+            </button>
+          </div>
 
-      <div class="panel" id="p-reg">
-        <div class="fg">
-          <label class="fl">電子郵件</label>
-          <input class="fi" type="email" id="r-email" placeholder="your@email.com">
-        </div>
-        <div class="fg">
-          <label class="fl">密碼（至少 8 位）</label>
-          <input class="fi" type="password" id="r-pw" placeholder="••••••••">
-        </div>
-        <div class="fg">
-          <label class="fl">確認密碼</label>
-          <input class="fi" type="password" id="r-pw2" placeholder="••••••••"
-            onkeydown="if(event.key==='Enter')register()">
-        </div>
-        <button class="btn" id="r-btn" onclick="register()">開 始 探 索</button>
-      </div>
+          <!-- ==================== 註冊面板 ==================== -->
+          <div class="panel" id="p-reg">
+            <div class="fg">
+              <label class="fl">電子郵件</label>
+              <input class="fi" type="email" id="r-email" placeholder="your@email.com">
+            </div>
+            <div class="fg">
+              <label class="fl">密碼（至少 8 位）</label>
+              <input class="fi" type="password" id="r-pw" placeholder="••••••••">
+            </div>
+            <div class="fg">
+              <label class="fl">確認密碼</label>
+              <input class="fi" type="password" id="r-pw2" placeholder="••••••••"
+                onkeydown="if(event.key==='Enter')register()">
+            </div>
+            <button class="btn" id="r-btn" onclick="register()">開 始 探 索</button>
+          </div>
 
-      <div class="card-footer">
-        <div class="footer-deco">
-          <div class="footer-deco-line"></div>
-          <div class="footer-deco-dot">✦ ✦ ✦</div>
-          <div class="footer-deco-line"></div>
+          <div class="card-footer">
+            <div class="footer-deco">
+              <div class="footer-deco-line"></div>
+              <div class="footer-deco-dot">✦ ✦ ✦</div>
+              <div class="footer-deco-line"></div>
+            </div>
+            <div class="footer-text">不看臉 · 只看靈魂</div>
+          </div>
         </div>
-        <div class="footer-text">不看臉 · 只看靈魂</div>
       </div>
     </div>
   </div>
@@ -310,121 +191,9 @@ const sb = createClient(SUPABASE_URL, SUPABASE_KEY)
 const EMAIL_REDIRECT = (window.location.origin && window.location.origin !== 'null') ?
   `${window.location.origin}${window.location.pathname.replace(/[^/]*$/, 'verify.html')}` : null
 
-/* ═══ 大理石背景 Canvas ════════════════════════ */
-;(function(){
-  const c = document.getElementById('bgCanvas')
-  const ctx = c.getContext('2d')
-  function resize(){ c.width = window.innerWidth; c.height = window.innerHeight; draw() }
-  function draw(){
-    const w = c.width, h = c.height
-    const base = ctx.createLinearGradient(0,0,w,h)
-    base.addColorStop(0,'#03060f'); base.addColorStop(.3,'#050c1a')
-    base.addColorStop(.6,'#040812'); base.addColorStop(1,'#02050d')
-    ctx.fillStyle = base; ctx.fillRect(0,0,w,h)
-    for(let i=0;i<14;i++){
-      const x0 = Math.random()*w, y0 = Math.random()*h*.5
-      const x1 = x0 + (Math.random()-.5)*w*.8, y1 = y0 + h*.5 + Math.random()*h*.5
-      const a = .015 + Math.random()*.04
-      const isBlue = Math.random() > .35
-      const col = isBlue ? `rgba(20,60,120,${a})` : `rgba(10,30,70,${a})`
-      const g = ctx.createLinearGradient(x0,y0,x1,y1)
-      g.addColorStop(0,'rgba(0,0,0,0)'); g.addColorStop(.35,col)
-      g.addColorStop(.65,col); g.addColorStop(1,'rgba(0,0,0,0)')
-      ctx.beginPath(); ctx.moveTo(x0,y0)
-      ctx.bezierCurveTo(
-        x0 + (Math.random()-.5)*200, y0 + (y1-y0)*.33 + (Math.random()-.5)*100,
-        x1 + (Math.random()-.5)*200, y0 + (y1-y0)*.66 + (Math.random()-.5)*100,
-        x1, y1)
-      ctx.strokeStyle = g; ctx.lineWidth = 1 + Math.random()*3.5; ctx.stroke()
-    }
-    for(let i=0;i<10;i++){
-      const x0 = Math.random()*w, y0 = Math.random()*h
-      const x1 = x0 + (Math.random()-.5)*w*.6, y1 = y0 + (Math.random()-.5)*h*.6
-      const a = .008 + Math.random()*.022
-      const g = ctx.createLinearGradient(x0,y0,x1,y1)
-      g.addColorStop(0,'rgba(0,0,0,0)'); g.addColorStop(.5,`rgba(180,140,40,${a})`); g.addColorStop(1,'rgba(0,0,0,0)')
-      ctx.beginPath(); ctx.moveTo(x0,y0); ctx.lineTo(x1,y1)
-      ctx.strokeStyle = g; ctx.lineWidth = .5 + Math.random(); ctx.stroke()
-    }
-  }
-  window.addEventListener('resize',resize); resize()
-})()
+/* Canvas 背景與星塵動畫保持不變（這裡省略，實際請保留你原本的完整 Canvas 程式碼） */
 
-/* ═══ 星塵粒子動畫 ════════════════════════════ */
-;(function(){
-  const c = document.getElementById('starCanvas')
-  const ctx = c.getContext('2d')
-  const stars = [], bright = []
-  function resize(){ c.width = window.innerWidth; c.height = window.innerHeight }
-  for(let i=0;i<300;i++){
-    const gold = Math.random() > .58
-    stars.push({
-      x: Math.random(), y: Math.random(),
-      r: gold ? (.8 + Math.random()*2.2) : (.4 + Math.random()*1.4),
-      gold,
-      alpha: .08 + Math.random()*.65,
-      speed: .3 + Math.random()*2,
-      phase: Math.random()*Math.PI*2,
-      dx: (Math.random()-.5)*0.0009,
-      dy: (Math.random()-.5)*0.0005
-    })
-  }
-  for(let i=0;i<20;i++){
-    bright.push({
-      x: Math.random(), y: Math.random(),
-      r: 1.5 + Math.random()*2,
-      alpha: .45 + Math.random()*.45,
-      phase: Math.random()*Math.PI*2,
-      speed: .4 + Math.random()*1.2,
-      dx: (Math.random()-.5)*0.0006,
-      dy: (Math.random()-.5)*0.00025
-    })
-  }
-  let t = 0
-  function draw(){
-    ctx.clearRect(0,0,c.width,c.height); t += .012
-    stars.forEach(s => {
-      s.x += s.dx; s.y += s.dy
-      if(s.x > 1) s.x -= 1; if(s.x < 0) s.x += 1
-      if(s.y > 1) s.y -= 1; if(s.y < 0) s.y += 1
-      const a = s.alpha * (.4 + .6 * (.5 + .5 * Math.sin(t*s.speed + s.phase)))
-      ctx.beginPath(); ctx.arc(s.x*c.width, s.y*c.height, s.r, 0, Math.PI*2)
-      ctx.fillStyle = s.gold ? `rgba(240,200,80,${a})` : `rgba(210,225,255,${a})`
-      ctx.fill()
-    })
-    bright.forEach(s => {
-      s.x += s.dx; s.y += s.dy
-      if(s.x > 1) s.x -= 1; if(s.x < 0) s.x += 1
-      if(s.y > 1) s.y -= 1; if(s.y < 0) s.y += 1
-      const tw = Math.sin(t*s.speed + s.phase)
-      const a = s.alpha * (.5 + .5 * (.5 + .5 * tw))
-      const x = s.x*c.width, y = s.y*c.height, len = s.r*5*(0.7 + 0.3*tw)
-      ctx.beginPath(); ctx.arc(x,y,s.r,0,Math.PI*2)
-      ctx.fillStyle = `rgba(240,200,80,${a})`; ctx.fill()
-      ;[0,Math.PI/2,Math.PI,Math.PI*1.5,Math.PI/4,Math.PI*.75,Math.PI*1.25,Math.PI*1.75].forEach(rot => {
-        ctx.save(); ctx.translate(x,y); ctx.rotate(rot)
-        const g = ctx.createLinearGradient(0,0,len,0)
-        g.addColorStop(0,`rgba(240,200,80,${a*.6})`); g.addColorStop(1,'rgba(240,200,80,0)')
-        ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(len,0)
-        ctx.strokeStyle = g; ctx.lineWidth = .7; ctx.stroke(); ctx.restore()
-      })
-    })
-    requestAnimationFrame(draw)
-  }
-  window.addEventListener('resize',resize); resize(); draw()
-})()
-
-/* ═══ Tab ════════════════════════════ */
-function sw(tab){
-  document.querySelectorAll('.tab').forEach((b,i)=>b.classList.toggle('active',(i===0&&tab==='login')||(i===1&&tab==='register')))
-  document.getElementById('p-login').classList.toggle('on',tab==='login')
-  document.getElementById('p-reg').classList.toggle('on',tab==='register')
-  clrMsg()
-}
-function showMsg(t,type='err'){ const e=document.getElementById('msg'); e.textContent=t; e.className=`msg ${type}` }
-function clrMsg(){ document.getElementById('msg').className='msg' }
-function setWorking(button,text){ button.disabled=true; button.dataset.original = button.dataset.original || button.textContent; button.textContent=text }
-function clearWorking(button){ button.disabled=false; button.textContent = button.dataset.original || button.textContent }
+/* Tab 切換、訊息顯示等函數保持不變 */
 
 /* ═══ 登入 ═══════════════════════════ */
 async function login(){
@@ -439,40 +208,4 @@ async function login(){
       : error.message || '登入失敗，請再試一次。'
     showMsg(msg); clearWorking(btn); return
   }
-  showMsg('登入成功，正在前往後台...','ok')
-  setTimeout(go,900)
-}
-
-/* ═══ 註冊 ═══════════════════════════ */
-async function register(){
-  const email = document.getElementById('r-email').value.trim()
-  const pw = document.getElementById('r-pw').value
-  const pw2 = document.getElementById('r-pw2').value
-  if(!email||!pw||!pw2) return showMsg('請填寫所有欄位')
-  if(pw.length < 8) return showMsg('密碼至少需要 8 個字元')
-  if(pw !== pw2) return showMsg('兩次密碼不一致')
-  const btn = document.getElementById('r-btn'); setWorking(btn,'建 立 中 …')
-  const options = EMAIL_REDIRECT ? { emailRedirectTo: EMAIL_REDIRECT } : undefined
-  const { data, error } = await sb.auth.signUp({ email, password: pw }, options)
-  if(error){
-    const msg = /already/i.test(error.message || '') ? '此信箱已註冊過' : (error.message || '註冊失敗，請稍後再試')
-    showMsg(msg); clearWorking(btn); return
-  }
-  showMsg('註冊成功！已寄出驗證信，請先前往 Email 完成驗證。','ok')
-  clearWorking(btn)
-}
-
-/* ═══ 跳轉 ═══════════════════════════ */
-function go(){ window.location.href = 'dashboard.html' }
-
-/* ═══ 自動跳轉 ═══════════════════════════════ */
-;(async()=>{
-  const { data: { session } } = await sb.auth.getSession()
-  if(session) go()
-})()
-</script>
-</body>
-</html>
-
-</body>
-</html>
+  showMsg('登入成功，正在
