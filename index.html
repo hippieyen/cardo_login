@@ -307,8 +307,7 @@ const SUPABASE_KEY = "sb_publishable_N1zVyHCUj4W9DxnCkPpxAw_Xkfs8VXF"
 const { createClient } = supabase
 const sb = createClient(SUPABASE_URL, SUPABASE_KEY)
 
-const EMAIL_REDIRECT = (window.location.origin && window.location.origin !== 'null') ?
-  `${window.location.origin}${window.location.pathname.replace(/[^/]*$/, 'verify.html')}` : null
+const EMAIL_REDIRECT = 'https://hippieyen.github.io/cardo_verify/'
 
 /* ═══ 大理石背景 Canvas ════════════════════════ */
 ;(function(){
@@ -463,7 +462,7 @@ async function register(){
 }
 
 /* ═══ 跳轉 ═══════════════════════════ */
-function go(){ window.location.href = 'dashboard.html' }
+function go(){ window.location.href = 'https://hippieyen.github.io/cardo_onboarding/' }
 
 /* ═══ 自動跳轉 ═══════════════════════════════ */
 ;(async()=>{
