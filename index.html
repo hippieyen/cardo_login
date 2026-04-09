@@ -451,8 +451,7 @@ async function register(){
   if(pw.length < 8) return showMsg('密碼至少需要 8 個字元')
   if(pw !== pw2) return showMsg('兩次密碼不一致')
   const btn = document.getElementById('r-btn'); setWorking(btn,'建 立 中 …')
-  const options = EMAIL_REDIRECT ? { emailRedirectTo: EMAIL_REDIRECT } : undefined
-  const { data, error } = await sb.auth.signUp({ email, password: pw }, options)
+  const { data, error } = await sb.auth.signUp({ email, password: pw, options: { emailRedirectTo: EMAIL_REDIRECT } })
   if(error){
     const msg = /already/i.test(error.message || '') ? '此信箱已註冊過' : (error.message || '註冊失敗，請稍後再試')
     showMsg(msg); clearWorking(btn); return
